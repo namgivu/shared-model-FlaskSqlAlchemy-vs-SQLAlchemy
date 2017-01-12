@@ -1,3 +1,4 @@
+##region github generated
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -87,3 +88,11 @@ ENV/
 
 # Rope project settings
 .ropeproject
+##endregion github generated
+
+#region pycharm personal `dev env` setting
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/dataSources/
+.idea/workspace.xml
+#endregion pycharm personal `dev env` setting
