@@ -5,11 +5,10 @@
       <sourceFolder url="file://$MODULE_DIR$/flask-app" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/python-app" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 2.7.12 virtualenv at ~/NN/code/sandbox-sqlalchemy/venv" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
-    <option name="projectConfiguration" value="Nosetests" />
-    <option name="PROJECT_TEST_RUNNER" value="Nosetests" />
+    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
   </component>
 </module>
