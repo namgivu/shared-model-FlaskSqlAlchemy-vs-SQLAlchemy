@@ -1,11 +1,4 @@
-from flask import Flask
-app = Flask(__name__)
-
-##region routing
-@app.route('/')
-def index():
-  return '122 flaask appp'
-##endregion routing
+from app import app
 
 if __name__ == "__main__":
-  app.run()
+  app.run(debug=True) #debug=True so that code get auto-reloaded code changed
