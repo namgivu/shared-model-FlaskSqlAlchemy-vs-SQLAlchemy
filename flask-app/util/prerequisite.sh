@@ -17,5 +17,5 @@ echo "Steps to install prerequisite
     . $APP_HOME/venv/bin/activate
 
 3.  Install pip packages
-    pip install -r $APP_HOME/flask-app/requirements.txt
+    pip install -r $APP_HOME/requirements.txt
 "
