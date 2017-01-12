@@ -95,4 +95,7 @@ ENV/
 .idea/dataSources.local.xml
 .idea/dataSources/
 .idea/workspace.xml
+
+.idea/misc.xml
+.idea/sandbox-sqlalchemy.iml
 #endregion pycharm personal `dev env` setting
