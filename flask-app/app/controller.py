@@ -25,10 +25,17 @@ def user_list():
 def user_email_list():
   from model.user_email import UserEmail
   userEmails = UserEmail.query.all()
-  userEmails = [ue.toDict() for ue in userEmails]
+
+  #region add owner field
+  d=[]
+  for ue in userEmails:
+    item = ue.toDict()
+    item['owner'] = ue.owner.toDict()
+    d.append(item)
+  #endregion add owner field
 
   d = {
-    'data': userEmails
+    'data': d
   }
   return jsonify(d) #return JSON in Flask ref. http://stackoverflow.com/a/13089975/248616
 ##endregion UserEmail
