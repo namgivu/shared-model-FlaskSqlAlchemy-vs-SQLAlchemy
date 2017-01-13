@@ -1,7 +1,7 @@
-from app import db
+from app import db_session
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
-Base.query = db.query_property()
+Base.query = db_session.query_property()
 
 
 class BaseModel(Base):

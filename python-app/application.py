@@ -37,9 +37,9 @@ from model.user import User
 user = User()
 user.user_name = user_name
 
-from app import db
-db.add(user)
-db.commit()
+from app import db_session
+db_session.add(user)
+db_session.commit()
 
 d={
   'message': 'Added user %s' % user_name,
@@ -52,10 +52,10 @@ pprint(d)
 from model.user import User
 users = User.query.filter_by(user_name=user_name).all()
 
-from app import db
+from app import db_session
 for user in users:
-  db.delete(user)
-db.commit()
+  db_session.delete(user)
+db_session.commit()
 
 d={
   'message': 'Deleted user %s' % user.user_name,

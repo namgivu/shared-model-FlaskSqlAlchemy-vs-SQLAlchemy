@@ -8,7 +8,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 
-db = scoped_session(
+db_session = scoped_session(
   sessionmaker(bind=engine)
 )
 #endregion setup db connection
