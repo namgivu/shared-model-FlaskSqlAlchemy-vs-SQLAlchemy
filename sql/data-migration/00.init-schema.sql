@@ -12,7 +12,8 @@ CREATE TABLE `users` (
 CREATE TABLE `user_emails` (
   `id`    int AUTO_INCREMENT,
   `email` text NOT NULL,
-  `user_id` int NOT NULL references users(`id`),
+  `user_id` int NOT NULL,
+  FOREIGN KEY(user_id) references users(`id`),
   PRIMARY KEY (`id`)
 );
 
