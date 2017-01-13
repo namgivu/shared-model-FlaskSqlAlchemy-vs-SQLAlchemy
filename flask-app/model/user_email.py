@@ -1,5 +1,6 @@
 from base_model import BaseModel
 from app import db
+
 from model.user import User
 
 
