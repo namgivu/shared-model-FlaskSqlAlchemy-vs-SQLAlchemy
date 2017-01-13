@@ -24,7 +24,7 @@ class UserEmail(BaseModel):
   owner = db.relationship(User) #customized way
 
   #more verbose syntax as below - used when multiple FK+PK exist on both sides of referrer+referee tables
-  #owner = relationship(User, foreign_keys=[user_id])
-  #owner = relationship(User, foreign_keys=[user_id], remote_side=[User.id])
+  #owner = db.relationship(User, foreign_keys=[user_id])
+  #owner = db.relationship(User, foreign_keys=[user_id], remote_side=[User.id])
 
   ##endregion relationship obj
