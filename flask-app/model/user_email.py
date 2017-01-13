@@ -13,7 +13,6 @@ class UserEmail(BaseModel):
   email = db.Column(db.Text)
   user_id = db.Column(db.Integer, db.ForeignKey(User.id))
 
-
   ##region relationship obj
   owner = db.relationship(User)
 
