@@ -27,7 +27,7 @@ db.init_app(app)
 import controller
 
 
-#handle error
+#region handle error
 @app.errorhandler(Exception)
 def app_error_handler(e):
   from flask import jsonify
@@ -35,3 +35,4 @@ def app_error_handler(e):
   return jsonify({
     'message': 'Error occurred\nError: %s' % str(e)
   })
+#endregion handle error
