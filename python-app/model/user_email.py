@@ -1,12 +1,5 @@
 from base_model import BaseModel
-import sqlalchemy as db
-from sqlalchemy.orm import relationship
-
-#region make `relationship()` callable via `db.relationship()`
-'''ref. http://stackoverflow.com/a/5356035/248616'''
-import sys
-setattr(sys.modules['sqlalchemy'], 'relationship', relationship)
-#endregion make `relationship()` callable via `db.relationship()`
+from app import db
 
 from model.user import User
 
