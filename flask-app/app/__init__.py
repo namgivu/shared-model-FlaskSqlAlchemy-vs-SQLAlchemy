@@ -23,9 +23,15 @@ db.init_app(app)
 #endregion setup db connection
 
 
-#region load db model class
-#region load db model class
-
-
 #routing handler
 import controller
+
+
+#handle error
+@app.errorhandler(Exception)
+def app_error_handler(e):
+  from flask import jsonify
+  print str(e) #also print to console
+  return jsonify({
+    'message': 'Error occurred\nError: %s' % str(e)
+  })
