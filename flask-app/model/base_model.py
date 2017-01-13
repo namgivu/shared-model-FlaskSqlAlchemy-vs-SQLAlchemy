@@ -1,7 +1,8 @@
 from app import db
+Base = db.Model
 
 
-class BaseModel(db.Model):
+class BaseModel(Base):
   __abstract__ = True
 
   def __repr__(self):
