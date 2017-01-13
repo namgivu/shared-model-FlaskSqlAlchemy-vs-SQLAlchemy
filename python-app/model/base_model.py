@@ -12,7 +12,7 @@ class BaseModel(Base):
     return str(d)
 
   def toDict(self):
-    '''Convert model object to Python dict type'''
+    '''Convert model object to Python dict type - mapped-columns only'''
     d = {}
     columns = self._sa_class_manager.mapper.mapped_table.columns
     for col in columns:
