@@ -10,8 +10,9 @@ def index():
 def user_list():
   from model.user import User
   users = User.query.all()
+  users = [u.toDict() for u in users]
 
   d = {
-    'data': [u.toDict() for u in users]
+    'data': users
   }
   return jsonify(d) #return JSON in Flask ref. http://stackoverflow.com/a/13089975/248616
