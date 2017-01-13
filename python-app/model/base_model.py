@@ -1,7 +1,10 @@
-from app import db_session
+#region prepare Base
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
+
+from app import db_session
 Base.query = db_session.query_property()
+#endregion prepare Base
 
 
 class BaseModel(Base):
