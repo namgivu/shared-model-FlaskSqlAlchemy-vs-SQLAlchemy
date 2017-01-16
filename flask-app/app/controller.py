@@ -23,6 +23,23 @@ def user_list():
   return jsonify(d) #return JSON in Flask ref. http://stackoverflow.com/a/13089975/248616
 
 
+@app.route('/user/list/follow-fk', methods=['GET'])
+def user_list_follow_fk():
+  from model.user import User
+  users = User.query.all()
+
+  d=[]
+  for u in users:
+    item = u.toDict()
+    item['primaryEmail'] = u.primaryEmail.toDict() if u.primaryEmail else None
+    d.append(item)
+
+  d = {
+    'data': d
+  }
+  return jsonify(d) #return JSON in Flask ref. http://stackoverflow.com/a/13089975/248616
+
+
 @app.route('/user/add', methods=['POST'])
 def user_add():
   #region data from param
@@ -100,6 +117,17 @@ def user_update():
 ##region UserEmail
 @app.route('/user_email/list', methods=['GET'])
 def user_email_list_all():
+  from model.user_email import UserEmail
+  userEmails = UserEmail.query.all()
+
+  d = {
+    'data': [ue.toDict() for ue in userEmails]
+  }
+  return jsonify(d) #return JSON in Flask ref. http://stackoverflow.com/a/13089975/248616
+
+
+@app.route('/user_email/list/follow-fk', methods=['GET'])
+def user_email_list_all_followFK():
   from model.user_email import UserEmail
   userEmails = UserEmail.query.all()
 
