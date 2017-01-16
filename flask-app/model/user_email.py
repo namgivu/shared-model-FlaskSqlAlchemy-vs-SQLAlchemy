@@ -12,6 +12,7 @@ class UserEmail(BaseModel):
   user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
   ##region relationship obj
-  owner = db.relationship('User', back_populates='emails')
-  #owner = db.relationship('User', foreign_keys=[user_id], back_populates='emails', primaryjoin='UserEmail.user_id=User.id') #TODO Get this works i.e. clarify relationship's join details
+  owner = db.relationship('User', primaryjoin='User.id==UserEmail.user_id',
+                          #foreign_keys='[UserEmail.user_id]',
+                          back_populates='emails')
   ##endregion relationship obj
