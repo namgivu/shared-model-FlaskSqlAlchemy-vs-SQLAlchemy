@@ -25,4 +25,9 @@ class User(BaseModel):
 
   primaryEmail = db.relationship('UserEmail',
                                  primaryjoin='User.primary_email_id==UserEmail.id')
+
+  billingAddress = db.relationship('Address',
+                                   primaryjoin='User.billing_address_id==Address.id')
+  shippingAddress = db.relationship('Address',
+                                    primaryjoin='User.shipping_address_id==Address.id')
   ##endregion relationship obj

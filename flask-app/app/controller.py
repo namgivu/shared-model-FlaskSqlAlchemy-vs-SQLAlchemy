@@ -31,7 +31,9 @@ def user_list_follow_fk():
   d=[]
   for u in users:
     item = u.toDict()
-    item['primaryEmail'] = u.primaryEmail.toDict() if u.primaryEmail else None
+    item['primaryEmail']    = u.primaryEmail.toDict()     if u.primaryEmail     else None
+    item['billingAddress']  = u.billingAddress.toDict()   if u.billingAddress   else None
+    item['shippingAddress'] = u.shippingAddress.toDict()  if u.shippingAddress  else None
     d.append(item)
 
   d = {
