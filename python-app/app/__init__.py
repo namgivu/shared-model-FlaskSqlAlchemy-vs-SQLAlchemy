@@ -22,4 +22,6 @@ from sqlalchemy.orm import relationship
 import sys
 setattr(sys.modules['sqlalchemy'], 'relationship', relationship)
 #endregion make `relationship()` callable via `db.relationship()`
+
+pass #TODO make this block into separate file e.g. database.py
 ##endregion setup db connection
