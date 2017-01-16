@@ -23,6 +23,13 @@ db.init_app(app)
 #endregion setup db connection
 
 
+#region import model
+'''All references between models to be in string text; sqlalchemy will parse the real code later''' #we need reference via string to get around circular reference ref. http://stackoverflow.com/a/15547425/248616
+from model.user         import User
+from model.user_email   import UserEmail
+#endregion import model
+
+
 #routing handler
 import controller
 
