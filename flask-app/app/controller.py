@@ -224,3 +224,17 @@ def user_email_delete():
   }
   return jsonify(d) #return JSON in Flask ref. http://stackoverflow.com/a/13089975/248616
 ##endregion UserEmail
+
+
+##region Address
+@app.route('/address/list', methods=['GET'])
+def user_address_list_all():
+  from model.address import Address
+  addresses = Address.query.all()
+
+  d = {
+    'data': [a.toDict() for a in addresses]
+  }
+  return jsonify(d) #return JSON in Flask ref. http://stackoverflow.com/a/13089975/248616
+##endregion Address
+
