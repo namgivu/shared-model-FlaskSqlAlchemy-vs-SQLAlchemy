@@ -28,6 +28,7 @@ db.init_app(app)
 '''All references between models to be in string text; sqlalchemy will parse the real code later''' #we need reference via string to get around circular reference ref. http://stackoverflow.com/a/15547425/248616
 from model.user         import User
 from model.user_email   import UserEmail
+from model.address      import Address
 #endregion import model
 
 pass #TODO move this block into separate file
