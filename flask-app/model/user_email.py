@@ -13,4 +13,5 @@ class UserEmail(BaseModel):
 
   ##region relationship obj
   owner = db.relationship('User', back_populates='emails')
-
+  #owner = db.relationship('User', foreign_keys=[user_id], back_populates='emails', primaryjoin='UserEmail.user_id=User.id') #TODO Get this works i.e. clarify relationship's join details
+  ##endregion relationship obj
