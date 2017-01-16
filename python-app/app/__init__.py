@@ -28,5 +28,11 @@ setattr(sys.modules['sqlalchemy'], 'relationship', relationship)
 pass
 ##endregion setup db connection
 
+#region import model class
+from model.user       import User
+from model.user_email import UserEmail
+from model.address    import Address
+#endregion import model class
+
 pass #TODO make this block into separate file e.g. database.py
 ###endregion database
