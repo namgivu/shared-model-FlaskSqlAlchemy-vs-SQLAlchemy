@@ -31,9 +31,13 @@ def user_list_follow_fk():
   d=[]
   for u in users:
     item = u.toDict()
+
+    #region followFK
     item['primaryEmail']    = u.primaryEmail.toDict()     if u.primaryEmail     else None
     item['billingAddress']  = u.billingAddress.toDict()   if u.billingAddress   else None
     item['shippingAddress'] = u.shippingAddress.toDict()  if u.shippingAddress  else None
+    #endregion followFK
+
     d.append(item)
 
   d = {
