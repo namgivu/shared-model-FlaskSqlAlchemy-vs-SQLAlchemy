@@ -2,6 +2,8 @@
 SQLALCHEMY_DATABASE_URI='mysql+pymysql://root:root@localhost/sandbox_sqlalchemy?charset=utf8'
 #endregion app config
 
+###region database
+
 ##region setup db connection
 #region create db_session
 from sqlalchemy import create_engine
@@ -23,5 +25,8 @@ import sys
 setattr(sys.modules['sqlalchemy'], 'relationship', relationship)
 #endregion make `relationship()` callable via `db.relationship()`
 
-pass #TODO make this block into separate file e.g. database.py
+pass
 ##endregion setup db connection
+
+pass #TODO make this block into separate file e.g. database.py
+###endregion database
