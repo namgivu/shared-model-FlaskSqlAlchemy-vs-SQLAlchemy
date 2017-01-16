@@ -15,6 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False #to get rid of warning `UserW
 ##endregion app creation
 
 
+##region database
 #region setup db connection
 from flask_sqlalchemy import SQLAlchemy #in place for DEPRECATED `from flask.ext.sqlalchemy import SQLAlchemy`
 
@@ -28,6 +29,9 @@ db.init_app(app)
 from model.user         import User
 from model.user_email   import UserEmail
 #endregion import model
+
+pass #TODO move this block into separate file
+##endregion database
 
 
 #routing handler
