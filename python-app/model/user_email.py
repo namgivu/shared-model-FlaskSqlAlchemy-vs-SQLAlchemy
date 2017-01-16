@@ -10,14 +10,10 @@ class UserEmail(BaseModel):
   #column mapping
   id = db.Column(db.Integer, primary_key=True)
   email = db.Column(db.Text)
-  user_id = db.Column(db.Integer, db.ForeignKey(User.id))
+  user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
   ##region relationship obj
-  #owner = relationship(User) #original way via pure `sqlalchemy` module
-  owner = db.relationship(User) #customized way
-
-  #more verbose syntax as below - used when multiple FK+PK exist on both sides of referrer+referee tables
-  #owner = db.relationship(User, foreign_keys=[user_id])
-  #owner = db.relationship(User, foreign_keys=[user_id], remote_side=[User.id])
-
+  owner = db.relationship('User', primaryjoin='User.id==UserEmail.user_id',
+                          #foreign_keys='[UserEmail.user_id]',
+                          back_populates='emails')
   ##endregion relationship obj
