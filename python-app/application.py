@@ -1,3 +1,4 @@
+from app import *
 from pprint import pprint
 
 #region print user list
@@ -14,13 +15,15 @@ pprint(d)
 from model.user_email import UserEmail
 userEmails = UserEmail.query.all()
 
-#region add owner field
 d = []
 for ue in userEmails:
   item = ue.toDict()
+
+  #region followFK
   item['owner'] = ue.owner.toDict()
+  #endregion followFK
+
   d.append(item)
-#endregion add owner field
 
 d = {
   'data': d
